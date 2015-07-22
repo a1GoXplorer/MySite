@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/a1GoXplorer/MySite/issues"
   },
-  "homepage": "https://github.com/a1GoXplorer/MySite"
+  "homepage": "https://github.com/a1GoXplorer/MySite",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
 }
