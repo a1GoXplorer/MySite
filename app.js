@@ -5,8 +5,6 @@ var ejs = require('ejs');
 var mongoose = require('mongoose');
 var viewEngine = require('view-engine');
 
-app.set('view engine', 'ejs');
-
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
 
@@ -18,6 +16,11 @@ MongoClient.connect("mongodb://localhost:27017/data/db", function(err, db) {
 });
 
 var app = express();
+
+app.set('view engine', 'ejs');
+
+app.use("/styles",express.static(__dirname + "/styles"));
+app.use("/scripts",express.static(__dirname + "/scripts"));
 
 app.get('/', function (req, res) {
   res.render('bullshit.ejs');
