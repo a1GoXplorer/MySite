@@ -1,10 +1,11 @@
 var express = require('express');
 var mongodb = require('mongodb');
 var request = require('request');
-var ejs = require('require');
+var ejs = require('ejs');
 var mongoose = require('mongoose');
+var viewEngine = require('view-engine');
 
-
+app.set('view engine', 'ejs');
 
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
@@ -19,7 +20,7 @@ MongoClient.connect("mongodb://localhost:27017/data/db", function(err, db) {
 var app = express();
 
 app.get('/', function (req, res) {
-  res.render('views/bullshit.ejs');
+  res.render('bullshit.ejs');
 });
 
 //server stuffs
